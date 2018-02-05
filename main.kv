@@ -1,0 +1,204 @@
+<RootWidget>:
+	
+    TabbedPanel:
+        pos_hint: {'x': 0, 'y': 0}
+        do_default_tab: False 
+
+                                                                                                                                                                                                  
+        TabbedPanelItem:
+            text: 'Color'
+            GridLayout:
+            	rows:2
+            	cols:7
+                Label:
+                	text: 'Intensity'
+                Label:
+                	text: 'Sky R'
+                Label:
+                	text: 'Sky G'
+                Label:
+                	text: 'Sky B'
+                Label:
+                	text: 'L. R'
+                Label:
+                	text: 'L. G'
+                Label:
+                	text: 'L. B'
+
+
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_intensity(self.value)
+
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_red(self.value)
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_green(self.value)
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_blue(self.value)
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_lightning_r(self.value)
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_lightning_g(self.value)
+                Slider:
+                	orientation: 'vertical'
+                    min: 1
+                    max: 255
+                    on_value: root.set_lightning_b(self.value)
+
+             
+        TabbedPanelItem:
+            text: 'Clouds'           
+            FloatLayout:  
+
+                Button:
+                    text: 'all off'
+                    size_hint: .15, .1
+                    pos_hint: {'x': 0, 'y': .05}
+                    on_release: root.set_lightning_kind(0)
+
+                Button:
+                    text: 'low'
+                    size_hint: .15, .1
+                    pos_hint: {'x': .15, 'y': .05}
+                    on_release: root.set_lightning_kind(30)
+                
+                Button:
+                    text: 'low-medium'
+                    size_hint: .15, .1
+                    pos_hint: {'x': .3, 'y': .05}
+                    on_release: root.set_lightning_kind(90)
+
+                Button:
+                    text: 'medium'
+                    size_hint: .15, .1
+                    pos_hint: {'x': .45, 'y': .05}
+                    on_release: root.set_lightning_kind(150)
+               
+                Button:
+                    text: 'strong'
+                    size_hint: .15, .1
+                    pos_hint: {'x': .6, 'y': .05}
+                    on_release: root.set_lightning_kind(210)
+
+                Label:
+                	text: 'Energy'
+                    size_hint: .1, .1
+                    pos_hint: {'x': .8, 'y': .9}
+
+
+                Slider:
+	                orientation: 'vertical'
+                    size_hint: .1, .7
+                    pos_hint: {'x': .8, 'y': .2}
+                    min: 0
+                    max: 15
+                    on_value: root.set_lightning_energy(self.value)
+                
+                Label:
+                	text: 'Speed'
+                    size_hint: .1, .1
+                    pos_hint: {'x': .9, 'y': .9}
+          
+                Slider:        
+	                orientation: 'vertical'
+                    size_hint: .1, .7
+                    pos_hint: {'x': .9, 'y': .2}
+                    min: 1
+                    max: 100
+                    on_value: root.set_speed(self.value)
+                
+                Label:
+                	text: 'Random'
+                    size_hint: .1, .1
+                    pos_hint: {'x': .85, 'y': .1}
+
+                Switch:
+                    active: False
+                    size_hint: .1, .1
+                    pos_hint: {'x': .85, 'y': .05}
+                    on_active: root.set_random(*args)
+
+                GridLayout:
+                	rows:3
+                	cols:4
+                    size_hint: .8, .8
+                    pos_hint: {'x': 0, 'y': .2}
+                    
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(8,0)
+                        on_release: root.cloud(8,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(9,0)
+                        on_release: root.cloud(9,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(10,0)
+                        on_release: root.cloud(10,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(11,0)
+                        on_release: root.cloud(11,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(12,0)
+                        on_release: root.cloud(12,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(13,0)
+                        on_release: root.cloud(13,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(14,0)
+                        on_release: root.cloud(14,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(15,0)
+                        on_release: root.cloud(15,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(16,0)
+                        on_release: root.cloud(16,1)
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(17,0)
+                        on_release: root.cloud(17,1)				    
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(18,0)
+                        on_release: root.cloud(18,1)				    
+				    Button:
+				        background_normal: 'img/raijin_cloud_01.png'
+				        background_down: 'img/raijin_cloud_02.png'
+                        on_press: root.cloud(19,0)
+                        on_release: root.cloud(19,1)
